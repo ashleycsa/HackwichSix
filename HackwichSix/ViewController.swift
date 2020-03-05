@@ -17,6 +17,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //Problem Set #1
     var myBucketList = ["New York", "Barcelona", "Japan"]
     
+    //Problem Set - HackwichSeven
+    var myFriendsHomeArray = ["Seattle, WA", "Fort Lee, Virginia", "Los Angeles, California", "Aiea, Oahu"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +29,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
      {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")
-        let text = myBucketList[indexPath.row]
+        let text = myFriendsArray[indexPath.row]
         cell?.textLabel?.text = text
+        cell?.detailTextLabel?.text = myFriendsHomeArray[indexPath.row]         //Problem Set - HackwichSeven
         return cell!
      }
     
     //returns the amount of rows that corresponds to the number of items in your array.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return myBucketList.count
+        return myFriendsArray.count
      }
 }
 
